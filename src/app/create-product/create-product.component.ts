@@ -77,8 +77,7 @@ export class CreateProductComponent implements OnInit {
 
     delete() {
         this.editservice.deleteData(`http://localhost:8080/all/product/delete/${this.id}`);
-        alert("Deleted Successfuly");
-        location.
+        alert("Deleted Successfuly")
 
 
 
