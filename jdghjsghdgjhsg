@@ -1,0 +1,109 @@
+[33mcommit 9bf4f313aa89b2b90da84b61bdeccb464a70f4c7[m
+Author: nulllpointer <hitesh.jha415@gmail.com>
+Date:   Fri Sep 1 00:56:48 2017 +0545
+
+    before layering
+
+[33mcommit d2778b9b58b611db75d8cf738de72bc049facf55[m
+Author: nulllpointer <hitesh.jha415@gmail.com>
+Date:   Fri Sep 1 00:56:29 2017 +0545
+
+    before layering
+
+[33mcommit 2624783c33ca254610f2294c633bb4b63a5c82db[m
+Author: nulllpointer <hitesh.jha415@gmail.com>
+Date:   Wed Aug 9 09:50:21 2017 +0545
+
+    2nd
+
+[33mcommit 2fa42c9b9cb8e96001ee95457eeec7f272d3c3ae[m
+Author: nulllpointer <hitesh.jha415@gmail.com>
+Date:   Wed Aug 9 09:30:52 2017 +0545
+
+    firstcommit1
+
+[33mcommit 7d2ed37c2b4b8bab41a93723332a8ee756413d9d[m
+Author: nulllpointer <hitesh.jha415@gmail.com>
+Date:   Wed Aug 9 09:19:12 2017 +0545
+
+    oddan 1st commit
+
+[33mcommit 03937ed01899ea76a2e943e558cc709decd84651[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Fri Jul 21 15:12:39 2017 +0530
+
+    updated angular dependency to 4.3.1
+
+[33mcommit ca96f758d049aa645a0ee105e5e89f5649584ac2[m
+Merge: ea36ca6 a7b6d73
+Author: Nitin Kumar Mishra <nitinkrmr@users.noreply.github.com>
+Date:   Fri Jul 21 14:27:50 2017 +0530
+
+    Merge pull request #110 from patapron/develop
+    
+    Added spanish language
+
+[33mcommit a7b6d73b61c6586461771b675f61c1abf3b32bce[m
+Author: Miguel Ángel Navas <pronick@gmail.com>
+Date:   Fri Jul 21 10:49:05 2017 +0200
+
+    Added spanish language
+
+[33mcommit ea36ca676241c5e65d74987f6b2ef76ee97efe20[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Mon Jul 17 14:59:25 2017 +0530
+
+    fix demo link
+
+[33mcommit 27919865b5f4e60b8abb6d97e4658157cfee5b30[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Mon Jul 17 00:41:26 2017 +0530
+
+    updated angular packages to 4.3.0 and angular/cli to 1.2.1
+
+[33mcommit 60c349cf2be1d876a9cd6c294d3ce46e003dcde7[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Sat Jul 1 09:13:39 2017 +0530
+
+    fix animation issue
+
+[33mcommit 2a43faf23f84907698a10b95230b4b3ba7b65823[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Fri Jun 30 22:11:40 2017 +0530
+
+    added transition
+
+[33mcommit bf1fd2febbd00179f32a579d302e7058bc2ed02a[m
+Author: Nitin Kumar Mishra <nitinkumarmishra@users.noreply.github.com>
+Date:   Wed Jun 28 11:59:02 2017 +0530
+
+    Update app.module.ts
+    
+    change language file location
+
+[33mcommit fef324b3fa199be24d2198ce0084d0e3460a02bf[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Sun Jun 25 11:23:28 2017 +0530
+
+    --amend
+    
+    updated to latest cli
+
+[33mcommit 78476395bc0af5465ef58983d34ec9bc0d99de21[m
+Author: Nitin Kumar Mishra <nitin@sahusoft.com>
+Date:   Sun Jun 25 11:18:28 2017 +0530
+
+    latest angular cli version updated
+
+[33mcommit 88b97326effb071ab68ee216125aadbf24afd97e[m
+Author: Angular CLI <angular-cli@angular.io>
+Date:   Sun Jun 25 09:51:19 2017 +0530
+
+    chore: initial commit from @angular/cli
+    
+        _                      _                 ____ _     ___
+       / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+      / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+     / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+    /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                   |___/

@@ -1,0 +1,49 @@
+<h2> EDIT PRODUCT</h2>
+
+<!--
+<div *ngIf="hero">
+    Product ID:<br>
+    <input type="text" name="productid" value={{hero.id}}><br>
+    Product name:<br>
+    <input type="text" name="productname" value={{hero.name}}><br><br>
+    Product price:<br>
+    <input type="text" name="productprice" value={{hero.price}}><br><br>
+
+    <input type="submit" value="Submit">
+</div>
+-->
+
+
+<div class="col-lg-6">
+
+    <form role="form">
+        <fieldset class="form-group">
+            <label>Name :</label>
+            <input  [(ngModel)]="datas.name" name="kk"  class="form-control"  [placeholder]="name">
+            <p class="help-block"></p>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label>Price :</label>
+            <input  [(ngModel)]="datas.price" name="ll" class="form-control" [placeholder]="price">
+        </fieldset>
+
+
+        <button (click)="goBack()"  name="something" class="btn btn-primary" [routerLink]="['/products']" routerLinkActive="active">Back</button>
+        <button (click)="delete" type="reset" name="something1" class="btn btn-primary">Reset</button>
+        <button (click)="post()" name="something" class="btn btn-primary" >Update</button>
+        <button (click)="delete()" name="something" class="btn btn-primary">Delelte</button>
+
+
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+

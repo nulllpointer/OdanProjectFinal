@@ -1,0 +1,62 @@
+<p>
+  order works!
+</p>
+
+<form role="form">
+    <fieldset class="form-group" >
+        <label>Product Name :</label>
+        <input  [(ngModel)]="name" name="something"  class="form-control"  placeholder="Enter product name">
+        <p class="help-block"></p>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label>Quantity</label>
+        <input  [(ngModel)]="quantity" name="something" class="form-control" placeholder="Enter Quantity">
+    </fieldset>
+
+
+    <button (click)="addtoCart()" name="something" class="btn btn-primary" >Add to Card</button>
+    <button type="reset" type="reset" class="btn btn-secondary">Reset Button</button>
+    <button  (click)="createOrder()" type="submit" class="btn btn-secondary">Confirm Order</button>
+
+
+
+</form>
+
+<div class="row">
+
+
+    <div class="card mb-19">
+        <div class="card-header">CART LIST</div>
+        <div class="card-block table-responsive">
+            <table class="table">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Product Quantity</th>
+                    <th>Update</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+
+                <!--<a *ngFor="let hero of herooo"  [routerLink]="['']">-->
+                <tr *ngFor='let hero of herooo'  [routerLink]="['/editproduct',hero.id]" routerLinkActive="active">
+                    <td>{{hero.id}}</td>
+                    <td>{{hero.name}}</td>
+                    <td>{{hero.price}}</td>
+                    <th>Update</th>
+
+
+                </tr>
+
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+

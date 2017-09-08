@@ -1,0 +1,85 @@
+<div>
+<!--
+    <div [@routerTransition]>
+-->
+
+    <div class="row">
+
+
+        <!--  <div class="col col-xl-6 col-lg-12">
+              <div class="card mb-3">
+
+
+                  <form [formGroup]="heroForm" (ngSubmit)="onheroFormSubmit()">
+                      <table>
+                          <tr><td>Enter ID</td><td><input formControlName="id">
+                              <label *ngIf="heroForm.get('id').invalid && processValidation" [ngClass] = "'error'"> ID is required </label>
+                          </td></tr>
+                          <tr><td>Enter Name</td><td><input formControlName="name">
+                              <label *ngIf="heroForm.get('name').invalid && processValidation" [ngClass] = "'error'"> Name is required. </label>
+                          </td></tr>
+                          <tr><td>Enter Price</td><td><input formControlName="price">
+                              <label *ngIf="heroForm.get('price').invalid && processValidation" [ngClass] = "'error'"> Price is required. </label>
+                          </td></tr>
+
+
+                          <tr><td colspan="2">
+                              <button *ngIf="!heroIdToUpdate">CREATE</button>
+                              <button *ngIf="heroIdToUpdate">UPDATE</button>
+                              <button (click)="backToCreatehero()" *ngIf="heroIdToUpdate">Go Back</button>
+                          </td></tr>
+                      </table>
+                  </form>
+
+
+  -->
+        <div class="card mb-19">
+            <div class="card-header">PRODUCT LIST</div>
+            <div class="card-block table-responsive" >
+                <table class="table">
+                    <thead class="thead-inverse">
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Update</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+
+                    <!--<a *ngFor="let hero of herooo"  [routerLink]="['']">-->
+                    <tr *ngFor='let hero of herooo' [routerLink]="['/createproduct, hero.id']" >
+                        <td>{{hero.id}}</td>
+                        <td>{{hero.name}}</td>
+                        <td>{{hero.price}}</td>
+                        <th>Update</th>
+                        <td>Edit</td>
+                        <td>Delete</td>
+
+                    </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+
+
+        <div *ngFor="let hero of herooo">
+            {{hero.id}}
+            {{hero.name}}
+        </div>
+
+
+    </div>
+
+
+</div>
