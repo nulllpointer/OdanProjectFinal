@@ -37,10 +37,6 @@ export class CreateProductComponent implements OnInit {
                 private route: ActivatedRoute, private productservice: ProductService,) {
 
 
-
-
-
-
     }
 
 

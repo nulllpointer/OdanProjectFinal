@@ -17,12 +17,7 @@ export class OrderService {
 
 
     constructor(private http: Http) {
-        let test = {"search": "person"};
-        var her=new Hero();
-       /* let id=this.hero.id;
-        let name=this.hero.name;
-        let price=this.hero.price;
-*/
+
 
     }
 
@@ -32,7 +27,7 @@ export class OrderService {
         let body = JSON.stringify(order);
         console.log(body);
         return this.http
-            .post("http://localhost:8080/all/product", body, this.options)
+            .post("http://localhost:8080/order", body, this.options)
             .toPromise()
             .catch(this.handleError);
 

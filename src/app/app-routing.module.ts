@@ -20,11 +20,12 @@ const routes: Routes = [
     },
 */
 
-    { path: '', component: ProductComponent },
+    //{ path: '', component: ProductComponent },
 
    { path: 'products', component: ProductComponent },
     { path: 'editproduct/:id', component: CreateProductComponent },
     { path: 'orders', component: OrderComponent },
+
     { path: '**', redirectTo: 'not-found' }
 
 ];

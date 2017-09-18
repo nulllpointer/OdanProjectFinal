@@ -23,12 +23,9 @@ export class ProductComponent implements OnInit {
 
     @Input() name: string;
     @Input() price: number;
+    today: number = Date.now();
 
-    @Output() valueChange: EventEmitter<string> = new EventEmitter<String>()
 
-    update(value) {
-        this.valueChange.emit(value);
-    }
 
 
     private heroesUrl: "http://localhost:8080/all/hero";
@@ -75,9 +72,6 @@ export class ProductComponent implements OnInit {
             price: this.price
 
         };
-
-        console.log("price is", product.price);
-
 
         this.productService.createProoduct(product);
         alert("Product Added Successfully");

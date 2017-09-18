@@ -1,50 +1,116 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {OrderService} from "./orderservice";
 import {FormGroup} from "@angular/forms";
-import {Order} from "./Order";
+import {Order} from "./order";
+import {Hero} from "../Hero";
+import {ProductService} from "../product/productservice";
+import {Createproductservice} from "../create-product/createproductservice.service";
+import {ActivatedRoute} from "@angular/router";
+import {Cart} from "./cart";
 
 @Component({
     selector: 'app-order',
     templateUrl: './order.component.html',
-    styleUrls: ['./order.component.scss']
+    styleUrls: ['./order.component.scss'],
 })
 export class OrderComponent implements OnInit {
 
+    heroList: Hero[] = [];
+    herooo: Hero[] = [];
+    private datas: any;
+    private hero: Hero;
+    private sub: any;
+    current = "test";
+    private log: string ='';
+    private textValue = "initial value";
 
-    name: any;
-    quantity: any
+    @Input() name: string = '';
+    @Input() quantity: number = 0;
+    @Input() cusname: string = '';
+    @Input() price: number = 0;
+    @Input() id: number = 0;
+
+
+
+    selected = null;
+
+
 
     patientForm: FormGroup;
 
-    @Input() order: OrderComponent;
-    private hmos: Order[];
-    private patientUid: number;
+    // @Input() order: OrderComponent;
+    private orders: Order;
+    private orderid: number;
     private showForm: boolean = false;
 
-    constructor(private orderService: OrderService) {
+    constructor(private route: ActivatedRoute, private orderService: OrderService, private productService: ProductService, private editservice: Createproductservice) {
+        // this.getProducts();
 
 
     }
 
     ngOnInit() {
 
+        //shows list of all products
+        this.getProducts();
 
     }
 
+    cartList: Cart[] = [];
 
-    createOrder() {
-        
 
-        var order = {
-            name: this.name,
-            price: this.quantity
+    getProducts() {
 
-        };
 
-        this.orderService.createOrder(order);
-        alert("Order Added Successfully");
-        location.reload();
+        this.productService.getAllProducts()
+            .then(aa => this.herooo = aa);
+        /* let herooo = new Hero();
+         herooo;*/
+
     }
+
+    placeOrder() {
+
+        console.log(this.cartList)
+
+
+
+        this.orderService.createOrder(this.cartList);
+        alert("order Added Successfully");
+
+    }
+
+    fillValue(value) {
+        let product = this.herooo.find((item: any) => item.name == value);
+
+        this.name = product.name;
+        // this.quantity=order;
+        this.price = product.price;
+
+        //this.log += `Value ${product} was selected\n`
+
+
+    }
+
+    onclick() {
+
+
+        let cart = new Cart();
+        cart.product.id=this.id;
+        cart.product.name = this.name;
+        cart.product.price = this.price;
+        cart.quantity = this.quantity;
+        this.cartList.push(cart);
+        }
+
+    deletecartItem(cart) {
+
+            this.cartList = this.cartList.filter(item => item !== cart);
+
+                }
+
+
+
 
 
 }

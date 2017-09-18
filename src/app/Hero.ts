@@ -1,8 +1,9 @@
 export class Hero {
 
-    private _id: number;
-    private _name: string;
-    private _price: number;
+     _id: number;
+    _name: string;
+    _price: number;
+
 
 
     get id(): number {
