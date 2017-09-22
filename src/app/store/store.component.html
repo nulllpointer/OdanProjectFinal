@@ -1,3 +1,7 @@
+<p>
+  store works!
+</p>
+
 <div>
 
     <h1 class="own" align="center">WELCOME TO ODAN</h1>
@@ -10,7 +14,7 @@
         <a href="/orders">
             <button class="fa-fonticons">Place Order</button>
         </a>
-        <button class="fa-fonticons" [routerLink]="['/store']">Go To Store</button>
+        <button class="fa-fonticons" [routerLink]="['/orders']">Go To Store</button>
         <button class="fa-fonticons" [routerLink]="['/orders']">DashBoard</button>
         <button class="fa-fonticons" [routerLink]="['/orders']">Login</button>
 
@@ -35,7 +39,7 @@
 
                         <form role="form">
                             <fieldset class="form-group">
-                                <label>Item Name :</label>
+                                <label>Product Name :</label>
                                 <input [(ngModel)]="name" name="something" class="form-control"
                                        placeholder="Enter name">
                                 <p class="help-block"></p>
@@ -131,3 +135,4 @@
 
 
 </div>
+

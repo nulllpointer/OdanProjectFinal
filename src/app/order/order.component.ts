@@ -7,6 +7,7 @@ import {ProductService} from "../product/productservice";
 import {Createproductservice} from "../create-product/createproductservice.service";
 import {ActivatedRoute} from "@angular/router";
 import {Cart} from "./cart";
+import {log} from "util";
 
 @Component({
     selector: 'app-order',
@@ -21,8 +22,11 @@ export class OrderComponent implements OnInit {
     private hero: Hero;
     private sub: any;
     current = "test";
-    private log: string ='';
-    private textValue = "initial value";
+    private log: string = '';
+    total:number=0;
+    grandtotal: number=0;
+    @Input() discount:number=0;
+    isProcessing: false;
 
     @Input() name: string = '';
     @Input() quantity: number = 0;
@@ -31,9 +35,7 @@ export class OrderComponent implements OnInit {
     @Input() id: number = 0;
 
 
-
     selected = null;
-
 
 
     patientForm: FormGroup;
@@ -74,9 +76,9 @@ export class OrderComponent implements OnInit {
         console.log(this.cartList)
 
 
-
         this.orderService.createOrder(this.cartList);
         alert("order Added Successfully");
+        location.reload();
 
     }
 
@@ -93,24 +95,40 @@ export class OrderComponent implements OnInit {
     }
 
     onclick() {
-
-
         let cart = new Cart();
-        cart.product.id=this.id;
+        cart.product.id = this.id;
         cart.product.name = this.name;
         cart.product.price = this.price;
         cart.quantity = this.quantity;
+        cart.discount=this.discount;
+        cart.total=this.total;
         this.cartList.push(cart);
-        }
+    }
 
     deletecartItem(cart) {
+        this.grandtotal=this.grandtotal-cart.total;
+        this.cartList = this.cartList.filter(item => item !== cart);
 
-            this.cartList = this.cartList.filter(item => item !== cart);
+    }
 
-                }
+    getgrandTotal(cart) {
+        this.cartList = this.cartList.map(item => item, cart)
+        for (let cart of this.cartList)
+        {
+            var quantity = cart.quantity;
+            var price = cart.product.price;
+            // var subtotal = quantity*price*discount/100;
+            var discount = cart.discount;
+            this.total=(quantity*price)-(quantity*price*discount/100);
+           // this.total=(subtotal)-(discount/100*subtotal);
+            cart.total=this.total;
+        }
+
+        this.grandtotal=cart.total+this.grandtotal;
+        console.log("grandtotal", this.grandtotal)
 
 
-
+    }
 
 
 }

@@ -1,23 +1,27 @@
-<p>
-    order works!
-</p>
-
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">OdanCafe</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/store">Store</a></li>
+            <li><a href="/products">Product Entry</a></li>
+        </ul>
+    </div>
+</nav>
 
 <div class="row">
 
 
-    <div class="card mb-19">
-        <div class="card-header">ADD TO CART</div>
+    <div class="card">
+        <div class="card-header">SELECT PRODUCT</div>
         <div class="card-block table-responsive">
 
             <label>Select Product</label><br/>
-            <!-- <select  >
-                 <option *ngFor="let hero of herooo" [ngValue]="hero" (click)="fillValue(hero)">{{hero.name}}</option>
-
-             </select>-->
-            <select class="form-control" #select [(ngModel)]="current" (change)="fillValue(select.value)">
+            <select class="divider" #select [(ngModel)]="current" (change)="fillValue(select.value)">
                 <option *ngFor="let item of herooo" [value]="item.name">{{item.name}}</option>
             </select>
+
 
         </div>
     </div>
@@ -27,7 +31,7 @@
 <div>
 
 
-    <form role="form">
+    <form role="form" class="form-inline">
         <fieldset class="form-group">
             <label>Name :</label>
             <input [(ngModel)]="name" name="kk" class="form-control" [placeholder]="name">
@@ -37,17 +41,19 @@
         <fieldset class="form-group">
             <label>Price :</label>
             <input [(ngModel)]="price" name="ll" class="form-control" [placeholder]="price">
+            <p class="help-block"></p>
         </fieldset>
 
         <fieldset class="form-group">
             <label>Quantity :</label>
             <input [(ngModel)]="quantity" name="mm" class="form-control" [placeholder]="quantity">
+            <p class="help-block"></p>
         </fieldset>
 
 
     </form>
 
-    <button type="button" (click)="onclick()" label="Add to cart">Add to Cart</button>
+    <button type="button" class="btn-primary" (click)="onclick()" label="Add to cart">Add to Cart</button>
 
 
     <div class="row">
@@ -63,6 +69,8 @@
                         <div class="card-block table-responsive" align="center">
 
 
+
+
                             <table class="table table-bordered" align="center">
 
 
@@ -72,30 +80,59 @@
                                     <th scope="row">Product Name</th>
                                     <th scope="row">Product Price</th>
                                     <th scope="row">Quantity</th>
-                                    <th scope="row">Reset</th>
+                                    <th scope="row">Total</th>
+                                    <th scope="row">Discount</th>
+                                    <th scope="row">SubTotal</th>
+                                    <th scope="row">Confirm</th>
+                                    <th scope="row">Remove</th>
 
 
                                 </tr>
                                 </thead>
+
+                                <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>SUM</td>
+
+                                    <td>{{grandtotal}}</td>
+
+                                </tr>
+                                </tfoot>
+
                                 <tbody>
 
 
-                                <!--<a *ngFor="let hero of herooo"  [routerLink]="['']">-->
-                                <tr *ngFor='let hero of cartList'>
-                                    <td>{{hero.product.id}}</td>
-                                    <td>{{hero.product.name}}</td>
-                                    <td>{{hero.product.price}}</td>
-                                    <td>{{hero.quantity}}</td>
-                                    <td button (click)="deletecartItem(hero)" type="reset">Remove</td>
-                                    <pre>{{log}}</pre>
+                                <tr *ngFor='let cart of cartList' class="table-active">
+                                    <td>{{cart.product.id}}</td>
+                                    <td>{{cart.product.name}}</td>
+                                    <td>{{cart.product.price}}</td>
+                                    <td>{{cart.quantity}}</td>
+                                    <td>{{cart.quantity*cart.product.price}}</td>
+                                    <td><input type="number" required [(ngModel)]="cart.discount"></td>
+                                    <td>{{cart.quantity*cart.product.price-(cart.quantity*cart.product.price*cart.discount)/100}}</td>
+                                    <td button (click)="getgrandTotal(cart)">Confirm Item</td>
+                                    <td button (click)="deletecartItem(cart)" type="reset">Remove</td>
 
 
                                 </tr>
 
+
                                 </tbody>
+
+
+
+
                             </table>
                             <button type="button" (click)="placeOrder()" label="Add to cart">Confirm and checkout
                             </button>
+
+
 
 
                         </div>

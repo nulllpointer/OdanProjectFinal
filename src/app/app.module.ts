@@ -23,6 +23,7 @@ import {ProductService} from "./product/productservice";
 import { OrderComponent } from './order/order.component';
 import {OrderService} from "./order/orderservice";
 import {Createproductservice} from "./create-product/createproductservice.service";
+import { StoreComponent } from './store/store.component';
 
 
 // AoT requires an exported function for factories
@@ -35,7 +36,7 @@ export function HttpLoaderFactory(http: Http) {
     declarations: [
         AppComponent, TablesComponent, CreateProductComponent, LayoutComponent,
         HeaderComponent,
-        SidebarComponent, LoginComponent, ProductComponent, OrderComponent
+        SidebarComponent, LoginComponent, ProductComponent, OrderComponent, StoreComponent
 
     ],
     imports: [
